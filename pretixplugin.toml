@@ -1,0 +1,5 @@
+[plugin]
+package = "pretix-pridepopup"
+modules = [ "pretix_pridepopup" ]
+marketplace_name = "pridepopup"
+
