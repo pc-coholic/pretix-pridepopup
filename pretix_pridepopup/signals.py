@@ -11,9 +11,9 @@ from pretix.presale.signals import html_head, process_response
 
 @receiver(html_head, dispatch_uid="pridepopup_html_head")
 def html_head_presale(sender, request=None, **kwargs):
-    template = get_template('pretix_pridepopup/presale_head.html')
+    template = get_template("pretix_pridepopup/presale_head.html")
     ctx = {
-        'interval': sender.settings.pridepopup_interval,
+        "interval": sender.settings.pridepopup_interval,
     }
     return template.render(ctx)
 
@@ -41,20 +41,22 @@ def navbar_info(sender, request, **kwargs):
 
 
 @receiver(signal=process_response, dispatch_uid="pridepopup_middleware_resp")
-def signal_process_response(sender, request: HttpRequest, response: HttpResponse, **kwargs):
-    if 'Content-Security-Policy' in response:
-        h = _parse_csp(response['Content-Security-Policy'])
+def signal_process_response(
+    sender, request: HttpRequest, response: HttpResponse, **kwargs
+):
+    if "Content-Security-Policy" in response:
+        h = _parse_csp(response["Content-Security-Policy"])
     else:
         h = {}
 
     csps = {
-        'style-src': ["'sha256-jitL/q5kwk/i4TsCCNU08PlRBUSdilYYowPwFDL70yw='"],
+        "style-src": ["'sha256-jitL/q5kwk/i4TsCCNU08PlRBUSdilYYowPwFDL70yw='"],
     }
 
     _merge_csp(h, csps)
 
     if h:
-        response['Content-Security-Policy'] = _render_csp(h)
+        response["Content-Security-Policy"] = _render_csp(h)
     return response
 
 

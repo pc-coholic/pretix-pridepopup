@@ -16,7 +16,9 @@ class PluginApp(PluginConfig):
     class PretixPluginMeta:
         name = gettext_lazy("Pride Pop-up")
         author = "Martin Gross"
-        description = gettext_lazy("Display the Pride Pop-up (https://www.accept.lgbt/) on your pretix shop")
+        description = gettext_lazy(
+            "Display the Pride Pop-up (https://www.accept.lgbt/) on your pretix shop"
+        )
         visible = True
         version = __version__
         category = "CUSTOMIZATION"

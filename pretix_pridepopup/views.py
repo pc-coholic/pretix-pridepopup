@@ -7,5 +7,5 @@ from pretix_pridepopup.forms import PridePopUpSettingsForm
 class PridePopUpSettingsView(EventSettingsViewMixin, EventSettingsFormView):
     model = Event
     form_class = PridePopUpSettingsForm
-    template_name = 'pretix_pridepopup/settings.html'
-    permission = 'can_change_settings'
+    template_name = "pretix_pridepopup/settings.html"
+    permission = "can_change_settings"

@@ -5,11 +5,9 @@ from pretix.base.forms import SettingsForm
 
 class PridePopUpSettingsForm(SettingsForm):
     pridepopup_interval = forms.IntegerField(
-        label=_('Display Pride Pop-up every'),
+        label=_("Display Pride Pop-up every"),
         required=True,
         min_value=0,
         initial=1,
-        widget=forms.NumberInput(
-            attrs={'addon_after': _('days')}
-        ),
+        widget=forms.NumberInput(attrs={"addon_after": _("days")}),
     )
