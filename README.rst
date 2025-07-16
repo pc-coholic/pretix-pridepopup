@@ -3,7 +3,7 @@ pretix Pride Pop-up
 
 This is a plugin for `pretix`_. 
 
-Display the Pride Pop-up (https://www.accep.lgbt/) on your pretix shop
+Display the Pride Pop-up (https://www.accept.lgbt/) on your pretix shop.
 
 Development setup
 -----------------
@@ -43,9 +43,11 @@ License
 -------
 
 
-Copyright 2025 Martin Gross
+Plugin: Copyright 2025 Martin Gross
 
-Released under the terms of the Apache License 2.0
+Banner: Copyright 2024 kraftwerk | Agentur für neue Kommunikation
+
+Plugin released under the terms of the Apache License 2.0
 
 
 
