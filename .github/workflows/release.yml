@@ -24,6 +24,9 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Install pretix
+        run: pip3 install pretix
+
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
