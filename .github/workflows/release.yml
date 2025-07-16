@@ -1,4 +1,4 @@
-name: release.yml
+name: Release to PyPi
 
 on:
   push:
@@ -17,6 +17,5 @@ jobs:
       id-token: write
     steps:
       # retrieve your distributions here
-
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
