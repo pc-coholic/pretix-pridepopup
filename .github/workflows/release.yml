@@ -33,10 +33,10 @@ jobs:
           pip install twine check-manifest pretix-plugin-build setuptools build -Ue .
 
       - name: Build package
-        run: |
-          python setup.py sdist
+        run: python setup.py sdist
+        working-directory: .
 
       - name: Publish package distributions to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          packages-dir: ./src/dist/
+          packages-dir: ./dist/
